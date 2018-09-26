@@ -1,4 +1,5 @@
 import React, {Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 class TodoItem extends Component {
 
@@ -18,11 +19,22 @@ class TodoItem extends Component {
     return (
       <Fragment>
         <div onClick={this.handleClick}>
-          {this.props.content}
+          {this.props.test} - {this.props.content}
         </div>
       </Fragment>
     )
   }
+}
+
+TodoItem.propTypes = {
+  test: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  deleteItem: PropTypes.func,
+  index: PropTypes.number,
+}
+
+TodoItem.defaultProps = {
+  test: 'hello',
 }
 
 export default TodoItem;
