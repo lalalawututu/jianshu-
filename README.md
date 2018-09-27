@@ -1,3 +1,9 @@
 ## react  简书提示
 Fragment 占位符可以让外层的标签隐藏掉
 dangerouslySetInnerHTML该属性让标签内容进行转译
+在react中用ref操作DOM节点,不过不建议使用
+生命周期函数 “shouldComponentUpdate”需要返回一个布尔值，render前
+生命周期函数 “componentWillUpdate”是在“shouldComponentUpdate”之后执行，render前，如果“shouldComponentUpdate”返回true执行，false不执行
+“componentDidUpdate”在render之后执行
+“componentWillReceiveProps”一个组件要从父组件接收参数，只要父组件的render函数被执行了，子组件的这个生命周期函数就会被执行
+“componentWillReceiveProps”如果这个组件第一次在父组件中出现，不会执行，如果这个组件已经在父组件中出现，才会执行

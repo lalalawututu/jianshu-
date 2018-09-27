@@ -15,11 +15,19 @@ class TodoItem extends Component {
     deleteItem(index);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextProps.content !== this.props.content) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   render () {
     return (
       <Fragment>
         <div onClick={this.handleClick}>
-          {this.props.test} - {this.props.content}
+          {this.props.content}
         </div>
       </Fragment>
     )
@@ -27,14 +35,10 @@ class TodoItem extends Component {
 }
 
 TodoItem.propTypes = {
-  test: PropTypes.string.isRequired,
-  content: PropTypes.string,
+  content: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   deleteItem: PropTypes.func,
   index: PropTypes.number,
 }
 
-TodoItem.defaultProps = {
-  test: 'hello',
-}
 
 export default TodoItem;

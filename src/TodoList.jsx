@@ -30,7 +30,7 @@ class TodoList extends Component {
     }));
   }
 
-  handleItemDelete(index) {
+  handleItemDelete(index) { 
     this.setState((prevState) => {
       const list = [...prevState.list];
       list.splice(index,1);;
