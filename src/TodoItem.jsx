@@ -40,5 +40,4 @@ TodoItem.propTypes = {
   index: PropTypes.number,
 }
 
-
 export default TodoItem;
