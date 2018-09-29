@@ -8,7 +8,7 @@ class TodoList extends Component {
     super(props);
     this.state = {
       inputValue: '',
-      list: ['learn ebnglish','xyueqi'],
+      list: ['1232123','123213'],
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleBtnClick = this.handleBtnClick.bind(this);
@@ -53,7 +53,14 @@ class TodoList extends Component {
   }
 
   componentDidMount() {
-    
+    axios.get('/api/todolist')
+      .then((res) => {
+        console.log(res.data)
+        this.setState(() => ({
+            list: [...res.data],
+        }));
+      })
+      .catch(() => {alert('error')})
   }
 
   render () {
