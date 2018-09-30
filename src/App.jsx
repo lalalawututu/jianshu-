@@ -1,18 +1,60 @@
 import React, {Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './style.css';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      show: true,
+      list:[],
     }
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleAddItem = this.handleAddItem.bind(this);
+  }
+
+  handleToggle() {
+    this.setState(() => ({
+      show: !this.state.show
+    }))
+  }
+
+  handleAddItem() {
+    this.setState((prevState) => {
+      return {
+        list:[...prevState.list,'item']
+      }
+    })
   }
 
   render () {
     return (
       <Fragment>
-        <div>hello world</div>
-        <button>toggle</button>
+        <TransitionGroup>
+          {
+            this.state.list.map((item, index) => {
+              return(
+                <CSSTransition
+                  timeout={1000}
+                  classNames='fade'
+                  unmountOnExit
+                  onEntered={(el) => {el.style.color='blue'}}
+                  appear={true}
+                  key={index}
+                >
+                  <div>
+                    {item}
+                  </div>
+                </CSSTransition>
+            )
+            })
+          }
+        </TransitionGroup>
+        
+        <div>hello world123</div>
+
+        <button onClick={this.handleAddItem}>toggle</button>
       </Fragment>
     )
   }
