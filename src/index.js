@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
-// import TodoList from './TodoList';
-ReactDOM.render(<App />, document.getElementById('root'));
+import TodoList from './TodoList';
+
+ReactDOM.render(<TodoList />, document.getElementById('root'));
 
 if(module.hot) {
   module.hot.accept();
