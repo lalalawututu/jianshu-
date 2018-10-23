@@ -19,3 +19,5 @@
 #对于中间件，redux-thunk是放在action里操作异步，redux-saga的操作方式是单独把异步的操作拆出来放到另外一个文件进行管理
 #saga处理特别大的项目，一般用thunk没有什么api便于使用
 #styled-components 样式管理工具
+#用immutable来管理store数据
+#用redux-immutable来管理统一数据格式
