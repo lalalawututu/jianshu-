@@ -133,6 +133,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.mouseLeave());
     },
     handleChangePage(page, totalPage, spin) {
+      console.log(spin);
       let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
       if(originAngle) {
         originAngle = parseInt(originAngle, 10);

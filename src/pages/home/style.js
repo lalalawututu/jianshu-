@@ -95,10 +95,66 @@ export const WriterWrapper = styled.div`
 	width: 278px;
 	border: 1px solid #dcdcdc;
 	border-radius: 3px;
-	height: 300px;
+	height: 600px;
 	line-height: 300px;
 	text-align: center;
 `;
+
+export const Container = styled.div`
+	position: relative;
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	border: 5px solid #1a70ea;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+`;
+
+export const Wave = styled.div`
+	position: relative;
+	width: 200px;
+	height: 200px;
+	background-color: #1a70ea;
+	border-radius: 50%;
+	font-size: 30px;
+	line-height: 250px;
+	&::before,
+	&::after {
+			content: "";
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			top: -29px;
+			left: 50%;
+			background-color: rgba(255, 255, 255, 0.4);
+			border-radius: 45%;
+			transform: translate(-50%, -70%) rotate(0);
+			animation: rotate 6s linear infinite;
+			z-index: 10;
+	}
+
+	&::after {
+			border-radius: 47%;
+			background-color: rgba(255, 255, 255, 0.9);
+			transform: translate(-50%, -70%) rotate(0);
+			animation: rotate 10s linear -5s infinite;
+			z-index: 20;
+	}
+
+	@keyframes rotate {
+    50% {
+        transform: translate(-50%, -73%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -70%) rotate(360deg);
+    }
+	}
+`;
+
 
 export const LoadMore = styled.div`
 	width: 100%;

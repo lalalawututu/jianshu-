@@ -1,0 +1,1 @@
+export const CSS_AMINATION = 'home/CSS_AMINATION';

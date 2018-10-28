@@ -1,5 +1,6 @@
 // import * as constants from './constants';
 import { fromJS } from 'immutable';
+import * as constants from './constants';
 
 const defaultState = fromJS({
   topicList: [{
@@ -81,10 +82,13 @@ const defaultState = fromJS({
     imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png',
   },
   ],
+  css3Amination: false
 });
 
 export default (state = defaultState, action) => {
   switch(action.type) {
+    case constants.CSS_AMINATION :
+      return state.set('css3Amination', true);
     default:
       return state;
   }

@@ -1,0 +1,42 @@
+.container{
+  position: relative;
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	border: 5px solid #1a70ea;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.containeActive{
+  position: relative;
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	border: 5px solid rgb(26, 112, 234);
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	overflow: hidden;
+  cursor: pointer;
+  animation:outAmination 1s infinite;
+  -moz-animation:outAmination 1s infinite; /* Firefox */
+  -webkit-animation:outAmination 1s infinite; /* Safari and Chrome */
+  -o-animation:outAmination 1s infinite; /* Opera */
+}
+
+@keyframes outAmination {
+  0% {box-shadow: 0 0 0 5 rgba(26, 112, 234, 0.8);}
+  70% {box-shadow: 0 0 0 10px rgba(26, 112, 234, 0.3);}
+  100% {box-shadow: 0 0 0 40px rgba(26, 112, 234, 0);}
+}
+@-webkit-keyframes outAmination {
+  0% {box-shadow: 0 0 0 5 rgba(26, 112, 234 0.8);}
+  70% {box-shadow: 0 0 0 10px rgba(26, 112, 234, 0.3);}
+  100% {box-shadow: 0 0 0 40px rgba(26, 112, 234, 0);}
+}
