@@ -21,3 +21,5 @@
 #styled-components 样式管理工具
 #用immutable来管理store数据
 #用redux-immutable来管理统一数据格式
+#PureComponent 用来代替shouldComponentUpdate ，用来避免组件不必要的渲染提升性能,不过这个需要与immutable共同使用，没有的话用shouldComponentUpdate代替。
+#动态路由 1、如传id值，在如<Link to={'/detail/' + item.get('id')} key={index}>里进行id传值,为了与分路由进行匹配，在detail总路由里加入<Route path="/detail/:id" exact component={Detail}></Route> id的参数进行匹配，在新的路由页面里通过“this.props.match.params.id”进行获取id值 2、按上述或者改为<Link to={'/detail/?id='} key={index}>,总路由改为<Route path="/detail" exact component={Detail}></Route> 不过this.props里的结果会发生变化，需要自己手动匹配id值

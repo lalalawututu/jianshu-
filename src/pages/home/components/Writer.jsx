@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   WriterWrapper,
-  Container,
   Wave
 } from '../style';
 import { connect } from 'react-redux';
 import { actionCreators }from '../store';
 import './am.css';
 
-class Writer extends Component {
+class Writer extends PureComponent {
   render() {
     const { cssAmination, clickWave } = this.props;
     return (
@@ -35,9 +34,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     clickWave(containerDisplay) {
       dispatch(actionCreators.clickCssAmination());
-      setTimeout(() => {
-        containerDisplay.style.display = 'none';
-      },3000);
+      // setTimeout(() => {
+      //   containerDisplay.style.display = 'none';
+      // },3000);
     },
   }
 }

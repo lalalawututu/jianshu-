@@ -94,6 +94,7 @@ export const RecommendItem = styled.div`
 export const WriterWrapper = styled.div`
 	width: 278px;
 	border: 1px solid #dcdcdc;
+	background: pink;
 	border-radius: 3px;
 	height: 600px;
 	line-height: 300px;
