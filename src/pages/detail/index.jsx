@@ -4,6 +4,7 @@ import {
   Header,
   Content
 } from './style';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actionCreators }from './store';
 
@@ -38,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));
